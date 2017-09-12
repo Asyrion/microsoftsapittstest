@@ -18,7 +18,7 @@ After generating it, open the STDAfx.h file and paste the following code
 after "#include <stdio.h>" but before the "#endif" statement. 
 This sets up the additional dependencies SAPI requires.
 
-    ```c++
+    ```cpp 
     #define _ATL_APARTMENT_THREADED
     #include <atlbase.h>
     //You may derive a class from CComModule and use it if you want to override something,
@@ -47,7 +47,9 @@ SAPI is a COM-based application, and COM must be initialized both before use and
 the time SAPI is active. In most cases, this is for the lifetime of the host application. 
 The following code (from Listing 2) initializes COM. Of course, the application does not do 
 anything beyond initialization, but it does ensure that COM is successfully started.    
-    `#include <stdafx.h>
+    
+    ```cpp 
+    #include <stdafx.h>
     #include <sapi.h>
 
     int main(int argc, char* argv[])
